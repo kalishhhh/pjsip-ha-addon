@@ -33,6 +33,10 @@ RUN make dep && make -j1 && make install
 WORKDIR /opt/pjproject/pjsip-apps/src/python
 RUN make -j1 && python3 setup.py install
 
+# Install Python dependencies
+RUN pip3 install --no-cache-dir flask aiohttp
+
+
 # Copy service files
 COPY sip_service.py /app/sip_service.py
 COPY run.sh /run.sh
