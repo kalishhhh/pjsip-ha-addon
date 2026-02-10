@@ -32,3 +32,11 @@ RUN make dep && make -j1 && make install
 # Build Python bindings
 WORKDIR /opt/pjproject/pjsip-apps/src/python
 RUN make -j1 && python3 setup.py install
+
+# Copy service files
+COPY sip_service.py /app/sip_service.py
+COPY run.sh /run.sh
+
+RUN chmod +x /run.sh
+
+CMD ["/run.sh"]
