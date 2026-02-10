@@ -38,6 +38,8 @@ RUN make dep && make -j1 && make install
 # 5️⃣ Build Python bindings
 WORKDIR /opt/pjproject/pjsip-apps/src/python
 RUN make -j1 && python3 setup.py install
+RUN ln -s /usr/bin/python3 /usr/bin/python
+
 
 
 # 6️⃣ Refresh linker cache
