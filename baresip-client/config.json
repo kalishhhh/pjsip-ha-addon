@@ -1,6 +1,6 @@
 {
-  "name": "pjsip Client",
-  "slug": "pjsip_client",
+  "name": "baresip Client",
+  "slug": "baresip_client",
   "description": "SIP softphone using baresip",
   "version": "1.0.0",
   "startup": "services",
