@@ -33,11 +33,12 @@ RUN ./configure \
     --disable-ffmpeg
 
 # 4️⃣ Build & install
-RUN make dep && make && make install
+RUN make dep && make -j1 && make install
 
 # 5️⃣ Build Python bindings
 WORKDIR /opt/pjproject/pjsip-apps/src/python
-RUN make && python3 setup.py install
+RUN make -j1 && python3 setup.py install
+
 
 # 6️⃣ Refresh linker cache
 RUN ldconfig
