@@ -34,7 +34,8 @@ WORKDIR /opt/pjproject/pjsip-apps/src/python
 RUN make -j1 && python3 setup.py install
 
 # Install Python dependencies
-RUN pip3 install --no-cache-dir flask aiohttp
+RUN pip3 install --no-cache-dir flask aiohttp --break-system-packages
+
 
 
 # Copy service files
