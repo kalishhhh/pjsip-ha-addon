@@ -36,6 +36,9 @@ RUN make -j1 && python3 setup.py install
 # Install Python dependencies
 RUN pip3 install --no-cache-dir flask aiohttp --break-system-packages
 
+ENV PYTHONPATH="/usr/local/lib/python3.11/site-packages:/usr/local/lib/python3/dist-packages"
+ENV LD_LIBRARY_PATH="/usr/local/lib"
+
 
 
 # Copy service files
