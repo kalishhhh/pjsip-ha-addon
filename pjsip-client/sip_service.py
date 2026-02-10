@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 import pjsua2 as pj
 import json
 import threading
+import time
 
 with open("/data/options.json") as f:
     cfg = json.load(f)
@@ -79,6 +80,11 @@ def keep_alive():
         ep.libHandleEvents(50)
 
 
-threading.Thread(target=keep_alive, daemon=True).start()
+def keep_alive():
+    while True:
+        time.sleep(1)
 
-app.run(host="0.0.0.0", port=8080)
+threading.Thread(target=keep_alive, daemon=False).start()
+
+app.run(host="0.0.0.0", port=8080, threaded=True)
+
