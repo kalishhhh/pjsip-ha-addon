@@ -1,17 +1,23 @@
 {
-  "name": "baresip Client",
+  "name": "Baresip Client",
   "slug": "baresip_client",
   "description": "SIP softphone using baresip",
   "version": "1.0.0",
+
   "startup": "services",
   "boot": "auto",
   "host_network": true,
-  "watchdog": true,
+
+  "arch": ["aarch64", "armv7", "amd64"],
+
+  "watchdog": "tcp://[HOST]:5060",
+
   "options": {
     "server_ip": "",
     "extension": "",
     "password": ""
   },
+
   "schema": {
     "server_ip": "str",
     "extension": "str",
