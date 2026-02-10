@@ -1,12 +1,12 @@
 {
-  "name": "PJSIP Client",
-  "slug": "pjsip_client",
+  "name": "Baresip Client",
+  "slug": "baresip_client",
+  "description": "SIP softphone using baresip",
   "version": "1.0.0",
-  "description": "SIP softphone using PJSIP",
   "startup": "services",
   "boot": "auto",
   "host_network": true,
-  "arch": ["aarch64", "amd64", "armv7"],
+  "watchdog": true,
   "options": {
     "server_ip": "",
     "extension": "",
